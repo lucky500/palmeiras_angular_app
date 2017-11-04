@@ -6,11 +6,13 @@ import { PlayerService } from './player.service';
 import { routing } from './app.routing';
 import { AppComponent } from './app.component';
 import { ListComponent } from './list/list.component';
+import { DetailComponent } from './detail/detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListComponent,
+    DetailComponent,
   ],
   imports: [
     BrowserModule,
