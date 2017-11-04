@@ -1,12 +1,23 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
 
 import { PlayerService } from './player.service';
+import { masterFirebaseConfig } from './api-keys';
 import { routing } from './app.routing';
 import { AppComponent } from './app.component';
 import { ListComponent } from './list/list.component';
 import { DetailComponent } from './detail/detail.component';
+
+export const firebaseConfig = {
+  apiKey: masterFirebaseConfig.apiKey,
+  authDomain: masterFirebaseConfig.authDomain,
+  databaseURL: masterFirebaseConfig.databaseURL,
+  storageBucket: masterFirebaseConfig.storageBucket
+};
+
 
 @NgModule({
   declarations: [
@@ -17,7 +28,9 @@ import { DetailComponent } from './detail/detail.component';
   imports: [
     BrowserModule,
     routing,
-    NgbModule.forRoot()
+    NgbModule.forRoot(),
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireDatabaseModule
   ],
   providers: [PlayerService],
   bootstrap: [AppComponent]
