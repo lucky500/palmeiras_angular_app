@@ -1,6 +1,7 @@
 <h3>Players</h3>
 
-<div *ngFor="let player of players" (click)="goToDetailPage(player)">
+<div *ngFor="let player of players | async" (click)="goToDetailPage(player)">
+  <img src="{{player.image}}" alt="" style="width: 300px">
   <h3>{{player.name}}</h3>
   <p>{{player.position}}</p>
 </div>
