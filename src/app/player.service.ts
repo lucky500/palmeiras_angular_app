@@ -17,12 +17,16 @@ export class PlayerService {
     return this.players;
   }
 
-  getPlayerById(playerId: number){
-    for(var i = 0; i <= PLAYERS.length - 1; i++){
-      if(PLAYERS[i].id === playerId){
-        return PLAYERS[i];
-      }
-    }
+  addPlayer(newPlayer: Player){
+    this.players.push(newPlayer);
   }
+
+  // getPlayerById(playerId: number){
+  //   for(var i = 0; i <= PLAYERS.length - 1; i++){
+  //     if(PLAYERS[i].id === playerId){
+  //       return PLAYERS[i];
+  //     }
+  //   }
+  // }
 
 }

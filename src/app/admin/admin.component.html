@@ -1,0 +1,38 @@
+<h4>Add new Player to Roster:</h4>
+
+<div>
+  <div>
+    <label>Player Image:</label>
+    <br>
+    <input #newImg>
+  </div>
+  <div>
+    <label>Player Name:</label>
+    <br>
+    <input #newName>
+  </div>
+  <div>
+    <label>Player Age:</label>
+    <br>
+    <input #newAge>
+  </div>
+  <div>
+    <label>Player Position:</label>
+    <br>
+    <input #newPosition>
+  </div>
+  <div>
+    <label>Number of Games:</label>
+    <br>
+    <input #newNumberOfGames>
+  </div>
+  <div>
+    <label>Player Description:</label>
+    <br>
+    <input #newDescription>
+  </div>
+</div>
+<div>
+  <h4>Add new Player to Roster:</h4>
+  <button (click)="submitForm(newImg.value, newName.value, newAge.value, newPosition.value, newNumberOfGames.value, newDescription.value);  newImg.value = ''; newName.value=''; newPosition.value=''; newNumberOfGames.value = ''; newDescription.value=''">Add</button>
+</div>

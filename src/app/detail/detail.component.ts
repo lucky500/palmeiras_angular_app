@@ -26,7 +26,7 @@ export class DetailComponent implements OnInit {
     this.route.params.forEach((urlParameters) =>{
       this.playerId = parseInt(urlParameters['id']);
     });
-    this.playerToDisplay = this.playerService.getPlayerById(this.playerId);
+    //this.playerToDisplay = this.playerService.getPlayerById(this.playerId);
   }
 
 }
