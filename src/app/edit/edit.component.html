@@ -1,0 +1,27 @@
+<h4>Edit Player</h4>
+
+<label>New Player Image:</label>
+<input [(ngModel)]="selectedPlayer.image">
+<br>
+
+<label>New Player Name:</label>
+<input [(ngModel)]="selectedPlayer.name">
+<br>
+
+<label>New Player Age:</label>
+<input [(ngModel)]="selectedPlayer.age">
+<br>
+
+<label>New Player Position:</label>
+<input [(ngModel)]="selectedPlayer.position">
+<br>
+
+<label>New Player Number of Games:</label>
+<input [(ngModel)]="selectedPlayer.numberOfGames">
+<br>
+
+<label>New Player Description:</label>
+<input [(ngModel)]="selectedPlayer.description">
+
+<button (click)="beginUpdatingPlayer(selectedPlayer)">Update</button>
+
