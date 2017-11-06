@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { ActivatedRoute, Params } from '@angular/router';
 import { Location } from '@angular/common';
 
+import { FirebaseObjectObservable } from 'angularfire2/database';
 import { PlayerService } from '../player.service';
 import { Player } from '../player.model';
 
@@ -13,8 +14,8 @@ import { Player } from '../player.model';
   providers: [PlayerService]
 })
 export class DetailComponent implements OnInit {
-  playerId: number;
-  playerToDisplay: Player;
+  playerId: string;
+  playerToDisplay;
 
   constructor(
     private route: ActivatedRoute, 
@@ -24,9 +25,9 @@ export class DetailComponent implements OnInit {
 
   ngOnInit() {
     this.route.params.forEach((urlParameters) =>{
-      this.playerId = parseInt(urlParameters['id']);
+      this.playerId = urlParameters['id'];
     });
-    //this.playerToDisplay = this.playerService.getPlayerById(this.playerId);
+    this.playerToDisplay = this.playerService.getPlayerById(this.playerId);
   }
 
 }
