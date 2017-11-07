@@ -1,15 +1,17 @@
 <div class="row">
   <h3>Players</h3>
-  <div *ngFor="let player of players | async" class="col-xs-12 col-md-6 col-lg-4">
-    <img src="{{player.image}}" alt="" style="width: 300px">
-    <h3 (click)="goToDetailPage(player)">{{player.name}}</h3>
-    <p>{{player.position}}</p>
-    <div *ngIf="currentRoute === '/admin'">
-      {{player.age}}
-      {{player.numberOfGames}}
-      {{player.description}}
-      <hr>
-      <app-edit [selectedPlayer]="player"></app-edit>
+  <div *ngFor="let player of players | async" class="col-xs-12 col-md-3">
+    <div class="outer-wrapper" (click)="goToDetailPage(player)">
+      <img src="{{player.image}}" alt="">
+      <h3>{{player.name}}</h3>
+      <p>{{player.position}}</p>
+      <div *ngIf="currentRoute === '/admin'">
+        {{player.age}}
+        {{player.numberOfGames}}
+        {{player.description}}
+        <hr class="divider">
+        <app-edit [selectedPlayer]="player"></app-edit>
+      </div>
     </div>
   </div>  
 </div>

@@ -33,8 +33,13 @@ export class PlayerService {
       age: localUpdatedPlayer.age,
       position: localUpdatedPlayer.position,
       numberOfGames: localUpdatedPlayer.numberOfGames,
-      description: localUpdatedPlayer.description,
+      description: localUpdatedPlayer.descriptionr
     });
+  }
+
+  deletePlayer(localPlayerToDelete){
+    var playerEntryInFirebase = this.getPlayerById(localPlayerToDelete.$key);
+    playerEntryInFirebase.remove();
   }
 
 }
